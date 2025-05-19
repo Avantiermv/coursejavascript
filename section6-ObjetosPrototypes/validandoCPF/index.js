@@ -42,3 +42,12 @@ ValidarCPF.prototype.isSequencia = function() {
 
 const cpf = new ValidarCPF('111.111.111-11');
 console.log(cpf.validarAqui());
+
+
+/*
+
+
+
+
+
+*/
