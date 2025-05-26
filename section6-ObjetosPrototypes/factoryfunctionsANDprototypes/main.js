@@ -18,5 +18,5 @@ function pessoa(nome, sobrenome){
     })
 }
 
-const pessoafdp = pessoa("Marcos", "Vinicius");
-console.log(pessoafdp);
+const pessoa1 = pessoa("Marcos", "Vinicius");
+console.log(pessoa1);
