@@ -1,19 +1,19 @@
 const falar = {
     falar(){
         console.log(`${this.nome} está falando`);
-    }
+    },
 };
 
 const beber = {
     beber(){
         console.log(`${this.nome} está bebendo`);
-    }
+    },
 }
 
 const comer = {
     comer(){
         console.log(`${this.nome} está comendo`);
-    }
+    },
 }
 
 function pessoa(nome, sobrenome){
