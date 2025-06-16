@@ -13,7 +13,7 @@ class ValidaForms{
     handleSubmit(e){
         e.preventDefault();
         const validar = this.validandoCampos();
-        const validarSenhas = this.validandoSenhas()
+        const validarSenhas = this.validandoSenhas();
 
         if(validar && validarSenhas){
             alert("Formulário foi enviado!")
