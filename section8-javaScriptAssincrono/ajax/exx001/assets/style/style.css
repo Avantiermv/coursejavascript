@@ -1,0 +1,28 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root{
+    --corPrimaria: rgb(122, 10, 234);
+    --fonte1: "Montserrat", serif;
+}
+
+*{
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: var(--corPrimaria);
+    font-family: var(--fonte1);
+}
+
+.container{
+    background-color: white;
+    width: 750px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
