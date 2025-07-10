@@ -10,7 +10,10 @@ document.addEventListener('click', e => {
 
 function carregaPagina(element){
     const href = element.getAttribute('href');
-    fetch(href).then(response => response.text()).then(html => carregaResultado(html)).catch((e) => console.log("AHHHHHHHHHHHHHHHH"));
+    fetch(href)
+        .then(response => response.text())
+            .then(html => carregaResultado(html))
+            .catch((e) => console.log("AHHHHHHHHHHHHHHHH"));
     carregaResultado(response);
 }    
 
