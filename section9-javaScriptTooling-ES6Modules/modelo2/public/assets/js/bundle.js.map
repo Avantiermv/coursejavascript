@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;AAAA,IAAIA,IAAI,GAAG,QAAQ;AAEnBC,KAAK,CAACD,IAAI,CAAC,C","sources":["webpack://aula2/./src/index.js"],"sourcesContent":["let nome = \"marcos\";\r\n\r\nalert(nome);"],"names":["nome","alert"],"sourceRoot":""}
