@@ -7,7 +7,7 @@ const geraNumero = () => String.fromCharCode(rand(48, 58));
 const simbolos = '^~#@%*&!$+=';
 const geraSimbolo = () => simbolos[rand(0, simbolos.length)];
 
-function gerarSenha(qunatidade, minusculas, maisculas, numeros, simbolos){
+export default function gerarSenha(qunatidade, minusculas, maisculas, numeros, simbolos){
     const senhaArray = [];
     qunatidade = Number(qunatidade);
 
@@ -17,6 +17,6 @@ function gerarSenha(qunatidade, minusculas, maisculas, numeros, simbolos){
         numeros && senhaArray.push(geraNumero());
         simbolos && senhaArray.push(geraSimbolo());
     }
-    console.log(senhaArray);
+    return senhaArray.join('').slice(0, qunatidade);
 }
-gerarSenha(10, true);
+gerarSenha(5, true, true, true);

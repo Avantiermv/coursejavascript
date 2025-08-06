@@ -521,6 +521,78 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
+/***/ }),
+
+/***/ "./src/modules/formgerasenha.js":
+/*!**************************************!*\
+  !*** ./src/modules/formgerasenha.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _geradores__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./geradores */ "./src/modules/geradores.js");
+
+var senhaGerada = document.querySelector('.senha-gerada');
+var quantidade = document.querySelector('.quantidade');
+var maiusculas = document.querySelector('.maiusculas');
+var minusculas = document.querySelector('.minusculas');
+var simbolos = document.querySelector('.simbolos');
+var numeros = document.querySelector('.numeros');
+var gerarSenhaButton = document.querySelector('.gerar-senha-button');
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  gerarSenhaButton.addEventListener('click', function () {
+    senhaGerada.innerHTML = geração();
+  });
+});
+function geração() {
+  var senha = (0,_geradores__WEBPACK_IMPORTED_MODULE_0__["default"])(quantidade.value, minusculas.checked, maiusculas.checked, numeros.checked, simbolos.checked);
+  return senha || 'nada selecionado';
+}
+
+/***/ }),
+
+/***/ "./src/modules/geradores.js":
+/*!**********************************!*\
+  !*** ./src/modules/geradores.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ gerarSenha)
+/* harmony export */ });
+var rand = function rand(min, max) {
+  return Math.floor(Math.random() * (min - max) + max);
+};
+var geraMaiuscula = function geraMaiuscula() {
+  return String.fromCharCode(rand(65, 91));
+};
+var geraMinuscula = function geraMinuscula() {
+  return String.fromCharCode(rand(97, 123));
+};
+var geraNumero = function geraNumero() {
+  return String.fromCharCode(rand(48, 58));
+};
+var simbolos = '^~#@%*&!$+=';
+var geraSimbolo = function geraSimbolo() {
+  return simbolos[rand(0, simbolos.length)];
+};
+function gerarSenha(qunatidade, minusculas, maisculas, numeros, simbolos) {
+  var senhaArray = [];
+  qunatidade = Number(qunatidade);
+  for (var i = 0; i < qunatidade; i++) {
+    maisculas && senhaArray.push(geraMaiuscula());
+    minusculas && senhaArray.push(geraMinuscula());
+    numeros && senhaArray.push(geraNumero());
+    simbolos && senhaArray.push(geraSimbolo());
+  }
+  return senhaArray.join('').slice(0, qunatidade);
+}
+gerarSenha(5, true, true, true);
+
 /***/ })
 
 /******/ 	});
@@ -604,7 +676,10 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _assets_css_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./assets/css/style.css */ "./src/assets/css/style.css");
+/* harmony import */ var _modules_formgerasenha__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/formgerasenha */ "./src/modules/formgerasenha.js");
 
+
+(0,_modules_formgerasenha__WEBPACK_IMPORTED_MODULE_1__["default"])();
 })();
 
 /******/ })()
