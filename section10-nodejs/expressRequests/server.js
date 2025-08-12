@@ -4,11 +4,17 @@ const app = express();
 app.use(express.urlencoded({ extended: true}));
 
 app.get('/', (request, response) => {
-    response.send("Hello India, I love you guys!!");
+    response.send('<form action="/" method="POST"> Nome do Cliente: <input type="text" name="nome"> <button> Olá Mundo </button> </form>');
 });
 
-app.get('/testes/:iduser?', (request, response) => {
-    response.send(request.body);
+app.post('/', (request, response) => {
+    console.log(request.body);
+    response.send(`Recebi seu forms: ${request.body.nome}`);
+});
+
+app.get('/testes/:iduser?/:parametro?', (request, response) => {
+    console.log(request.params);
+    console.log(request.query);
 });
 
 app.listen(3000, () => {
